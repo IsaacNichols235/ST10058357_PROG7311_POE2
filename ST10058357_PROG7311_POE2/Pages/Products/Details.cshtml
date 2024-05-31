@@ -1,0 +1,50 @@
+﻿@page
+@model ST10058357_PROG7311_POE2.Pages.Products.DetailsModel
+
+@using Microsoft.AspNetCore.Identity
+@using ST10058357_PROG7311_POE2.Models
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Product Details</h1>
+
+<div class="product-details-card">
+    <img src="~/@Model.Product.ImagePath" alt="@Model.Product.Name" class="product-details-image" />
+    <div class="product-details">
+        <h2 class="product-details-name">@Model.Product.Name</h2>
+        <p class="product-details-price">R @Model.Product.Price</p>
+        <p class="product-details-description">@Model.Product.Description</p>
+        <dl class="row">
+            <dt class="col-sm-4">Farmer</dt>
+            <dd class="col-sm-8">@Model.FarmerName</dd>
+
+            <dt class="col-sm-4">Category</dt>
+            <dd class="col-sm-8">@Model.CategoryName</dd>
+
+            <dt class="col-sm-4">SubCategory</dt>
+            <dd class="col-sm-8">@Model.SubCategoryName</dd>
+
+            <dt class="col-sm-4">Production Date</dt>
+            <dd class="col-sm-8">@Model.Product.ProductionDate.ToShortDateString()</dd>
+
+            <dt class="col-sm-4">Farmer Location</dt>
+            <dd class="col-sm-8">@Model.FarmerLocation</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="product-details-actions">
+    @if (await Model.IsProductOwner())
+    {
+       @* <a asp-page="./Edit" asp-route-id="@Model.Product.ProductId" class="btn btn-primary">Edit</a> *@
+    }
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

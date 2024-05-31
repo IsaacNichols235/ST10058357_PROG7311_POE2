@@ -1,0 +1,108 @@
+﻿@page
+@model ST10058357_PROG7311_POE2.Pages.Products.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+
+<div class="centered-form-container">
+    <div class="centred-form" >
+        <form method="post" enctype="multipart/form-data" class="centred-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="Product.FarmerId" class="control-label"></label>
+                <input asp-for="Product.FarmerId" class="form-control" />
+                <span asp-validation-for="Product.FarmerId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Product.CategoryId" class="control-label"></label>
+                <select asp-for="Product.CategoryId" class="form-control" id="categoryDropdown">
+                    <option value="">Select Category</option>
+                    @foreach (var category in Model.ProductCategories)
+                    {
+                        <option value="@category.CategoryId">@category.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.SubCategoryId" class="control-label"></label>
+                <select asp-for="Product.SubCategoryId" class="form-control" id="subCategoryDropdown">
+                    <option value="">Select SubCategory</option>
+                </select>
+                <span asp-validation-for="Product.SubCategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Name" class="control-label"></label>
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Description" class="control-label"></label>
+                <input asp-for="Product.Description" class="form-control" />
+                <span asp-validation-for="Product.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.ProductionDate" class="control-label"></label>
+                <input asp-for="Product.ProductionDate" class="form-control" />
+                <span asp-validation-for="Product.ProductionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Price" class="control-label"></label>
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductImage" class="control-label"></label>
+                <input asp-for="ProductImage" type="file" class="form-control" />
+                <span asp-validation-for="ProductImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            
+        </form><div>
+            <a asp-page="Index">Back to List</a>
+        </div>
+    </div>
+    
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var subCategories = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ProductSubCategories));
+
+            document.getElementById('categoryDropdown').addEventListener('change', function () {
+                var categoryId = this.value;
+                var subCategoryDropdown = document.getElementById('subCategoryDropdown');
+
+                // Clear existing subcategory options
+                subCategoryDropdown.innerHTML = '<option value="">Select SubCategory</option>';
+
+                if (categoryId) {
+                    subCategories.forEach(function (subCategory) {
+                        if (subCategory.CategoryId == categoryId) {
+                            var option = document.createElement('option');
+                            option.value = subCategory.SubCategoryId;
+                            option.text = subCategory.Name;
+                            subCategoryDropdown.add(option);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
+

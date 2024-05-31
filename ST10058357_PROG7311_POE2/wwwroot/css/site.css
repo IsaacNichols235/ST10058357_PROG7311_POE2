@@ -1,0 +1,687 @@
+:root {
+    --primary-color: #285C08;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --text-color: #212529;
+    --background-color: #f8f9fa;
+    --Subtitle-White: #DAE6D3;
+    --login-button-color: white;
+    --button-hover--bg: #285C6760
+}
+
+
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+/*tab navigation*/
+.login-logout-card .card-header {
+    padding: 0px 0px 12px 0px;
+}
+
+.login-logout-card ul.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+
+.login-logout-card li.nav-item {
+    width: 50%;
+    login-logout-card a.nav-link font-size: 1rem;
+    color: #495057;
+    text-align: center;
+    padding: 1rem;
+}
+
+.login-logout-card .card-body {
+    padding: 10px 20px;
+}
+
+
+
+
+.agri-energy-btn-green {
+    color: var(--primary-color)
+}
+.nav-title {
+    color: black;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 30px;
+    word-wrap: break-word;
+    padding-inline-end: 50px;
+}
+
+.nav-items {
+    color: black;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 18px;
+    word-wrap: break-word;
+    text-align: center;
+    border-radius: 30px;
+}
+    .nav-link.nav-items:hover {
+        background: var(--primary-color);
+        color: var(--Subtitle-White);
+        text-decoration: none; /* Ensure no underline */
+    }
+
+/* Additional styles to ensure link colors are set */
+.nav-link {
+    color: black;
+}
+
+    .nav-link:hover {
+        color: var(--primary-color) /* Darker shade on hover */
+    }
+
+/* Add padding between nav items */
+.navbar-nav .nav-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+/* Styles for the login button */
+.login-button {
+    width: 100%;
+    height: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background: var(--primary-color);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    display: inline-flex;
+    color: var(--login-button-color);
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+}
+
+    .login-button:hover {
+        background: var(--button-hover--bg); /* Optional: Change color on hover */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* More shadow on hover */
+        text-decoration: none; /* Remove underline */
+    }
+
+
+
+.home-page .cards-1 {
+    m- [0_0_48px_0] flex flex-row gap-[0_32px] w-[fit-content] box-sizing-border
+}
+
+.home-page .customer-quote-3 {
+    shadow- [-4px_8px_20px_0px_rgba(0,0,0,0.1)] rounded-[12px] border-[1px_solid_#F7F7F7] bg-[#FFFFFF] flex flex-col items-center p-[31px_0_31px_0] w-[405.3px] box-sizing-border
+}
+
+
+
+/*
+    Home page CSS
+*/
+
+/* Container styles */
+.container-box {
+    align-self: stretch;
+    height: 600px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('/images/hero.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    display: flex; /* Changed from inline-flex to flex */
+}
+
+/* Inner container styles */
+.inner-container {
+    width: 595px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+}
+
+/* Text container styles */
+.text-container {
+    align-self: stretch;
+    height: 386px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    display: flex;
+}
+
+/* Text styles */
+.text-small {
+    align-self: stretch;
+    text-align: center;
+    color: #DAE6D3;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    word-wrap: break-word;
+}
+
+.text-large {
+    align-self: stretch;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 64px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.text-medium {
+    align-self: stretch;
+    text-align: center;
+    color: #DAE6D3;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    word-wrap: break-word;
+}
+
+/* Button styles */
+.button-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background: #285C08;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+    .button-container:hover {
+        background: var(--button-hover--bg); /* Optional: Change color on hover */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* More shadow on hover */
+        text-decoration: none; /* Remove underline */
+    }
+
+.button-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+    /*
+        Card CSS
+    */
+.feature-card {
+    flex: 1 1 0;
+    align-self: stretch;
+    padding: 32px;
+    background: white;
+    box-shadow: -4px 8px 20px rgba(0, 0, 0, 0.10);
+    border-radius: 12px;
+    border: 1px #F7F7F7 solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 48px;
+    display: inline-flex
+}
+
+.feature-card-subtitle {
+    align-self: stretch;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 36px;
+    word-wrap: break-word
+}
+
+.feature-card-body {
+    align-self: stretch;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 30px;
+    word-wrap: break-word
+}
+
+    /*
+        testimonial cards
+    */
+    .test-card-subtitle {
+        align-self: stretch;
+        color: black;
+        font-size: 20px;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 30px;
+        word-wrap: break-word"
+    }
+
+    .test-card-name {
+        color: black;
+        font-size: 16px;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 24px;
+        word-wrap: break-word
+    }
+
+    .test-card-job {
+        color: #828282;
+    }
+
+
+
+    /*
+        About Us CSS
+    */
+.about-sections {
+    height: 831px;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 148px;
+    display: inline-flex
+}
+
+.headline {
+    width: 550px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    display: inline-flex
+}
+
+
+.headline-title {
+    align-self: stretch;
+    text-align: center;
+    color: black;
+    font-size: 64px;
+    font-family: Inter;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.headline-text {
+    align-self: stretch;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 30px;
+    word-wrap: break-word
+}
+
+.headline-image {
+    padding: 10px;
+    background: linear-gradient(0deg, #F7F7F7 0%, #F7F7F7 100%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border-width:0px;
+    width: 508px;
+    height: 657px;
+}
+
+
+/*
+    Products
+*/
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.filter-sort {
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color:azure
+
+}
+
+.product-card {
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-details {
+    margin-top: 10px;
+}
+
+.product-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.product-description {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.product-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+    .product-link:hover {
+        background-color: var(--secondary-color);
+    }
+
+
+/*
+    Create forms
+*/
+
+.centred-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .centred-form .form-group {
+        width: 100%;
+        max-width: 400px; /* Adjust the width as needed */
+        margin-bottom: 20px; /* Adds space between form groups */
+    }
+
+    .centred-form .form-control {
+        width: 100%;
+    }
+
+.centered-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-form {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+}
+
+    .centered-form .form-group {
+        margin-bottom: 20px; /* Adds space between form groups */
+    }
+
+
+/*
+    Form button
+*/
+.btn-primar{
+    background: var(--primary-color)
+}
+
+/*
+    Details pages
+*/
+.product-details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-details-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-details {
+    text-align: center;
+}
+
+.product-details-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-details-price {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.product-details-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product-details-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+
+    .product-details-actions .btn {
+        padding: 10px 20px;
+    }
+
+
+/*
+    Product filtering
+*/
+
+.form-inline .form-control {
+    width: auto;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-details {
+    text-align: center;
+}
+
+.product-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+    .product-link:hover {
+        text-decoration: underline;
+    }
+
+.filter-sort {
+    margin-bottom: 20px;
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+    .custom-dropdown select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .custom-dropdown::after {
+        content: '\25BC'; /* Unicode character for the down arrow */
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #999;
+    }
+
+
+/*
+    Farmer Styling
+*/
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.farmer-profile {
+    max-width: 600px;2
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-index-image {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%);
+    border-radius: 9999px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,155 @@
+﻿@page
+@model ST10058357_PROG7311_POE2.Pages.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@if (Model.IsFarmer)
+{
+    <div class="container product-details-card">
+        <h1>Your Profile</h1>
+        <img src="~/@Model.CurrentFarmer.ImagePath" alt="@Model.CurrentFarmer.UserName" class="product-details-image" style="max-width: 150px"/>
+        <div class="product-details">
+            <h2 class="card-title" style="padding-top: 10px">@Model.CurrentFarmer.FirstName @Model.CurrentFarmer.LastName</h2>
+            <p class="product-details-price">@Model.CurrentFarmer.Address</p>
+            <div class="product-details">
+                <p class="card-text"><strong>Products:</strong> @Model.CurrentFarmer.ProductCount</p>
+                <p class="card-text"><strong>Email:</strong> @Model.CurrentFarmer.Email</p>
+                <p class="card-text"><strong>Phone:</strong> @Model.CurrentFarmer.PhoneNumber</p>
+                <p class="card-text"><strong>Username:</strong> @Model.CurrentFarmer.UserName</p>
+                <p class="card-text"><strong>Age:</strong> @Model.CurrentFarmer.Age</p>
+                <p class="card-text"><strong>Registered By:</strong> @Model.CurrentFarmer.RegEmployeeName</p>
+                <p class="card-text"><strong>Registration Date:</strong> @Model.CurrentFarmer.RegistrationDate</p>
+            </div>
+        </div>
+    </div>
+
+
+}
+else
+{
+    <h1>All Farmers</h1>
+    <p>
+        <a class="login-button" style="width:fit-content" asp-page="Create">Add New Farmer</a>
+    </p>
+    <div class="row">
+        @foreach (var farmer in Model.Farmers)
+        {
+            <div class="product-card">
+                <img src="~/@farmer.ImagePath" alt="@farmer.UserName" class="product-details-image" style="border-radius:30px" />
+                <h2 class="card-title" style="padding-top: 10px">@farmer.FirstName @farmer.LastName</h2>
+                <p class="product-details-price">@farmer.Address</p>
+                <div class="product-details">
+                    <p class="card-text"><strong>Products:</strong> @farmer.ProductCount</p>
+                    <p class="card-text"><strong>Email:</strong> @farmer.Email</p>
+                    <p class="card-text"><strong>Phone:</strong> @farmer.PhoneNumber</p>
+                    <p class="card-text"><strong>Username:</strong> @farmer.UserName</p>
+                    <p class="card-text"><strong>Age:</strong> @farmer.Age</p>
+                    <p class="card-text"><strong>Registered By:</strong> @farmer.RegEmployeeName</p>
+                    <p class="card-text"><strong>Registration Date:</strong> @farmer.RegistrationDate</p>
+
+                    <!-- Add more farmer details here -->
+                </div>
+            </div>
+        }
+    </div>
+}
+</div>
+
+
+
+@* 
+@if (Model.Farmers != null && Model.Farmers.Count > 0)
+{
+    <table class="table table-boardered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].PasswordHash)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].RegistrationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Farmers[0].RegEmployeeUserID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Farmers)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)  @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PasswordHash)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RegistrationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RegEmployeeName)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No farmers have been registered.</p>
+} *@
